@@ -99,7 +99,7 @@ Then, at the root of the project, create an environment and install the dependen
 
 ```bash
 uv init
-uv add jupyter notebook ipykernel torch torchvision numpy matplotlib
+uv add jupyter notebook ipykernel torch torchvision numpy matplotlib ipykernel
 ```
 
 This creates a `.venv/` folder at the root of the project containing all the dependencies. You can now open `Subject.ipynb` in one of the following ways.
