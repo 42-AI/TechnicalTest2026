@@ -20,3 +20,10 @@ data/
 .DS_Store
 .idea/
 .vscode/
+
+
+# uv
+.python-version
+pyproject.toml
+uv.lock
+main.py
