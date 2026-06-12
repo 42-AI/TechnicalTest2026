@@ -98,25 +98,45 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 Then, at the root of the project, create an environment and install the dependencies:
 
 ```bash
-uv venv
-uv pip install jupyter notebook torch torchvision numpy matplotlib
+uv init
+uv add jupyter notebook ipykernel torch torchvision numpy matplotlib
 ```
 
-Finally, launch Jupyter:
+This creates a `.venv/` folder at the root of the project containing all the dependencies. You can now open `Subject.ipynb` in one of the following ways.
+
+### Option A — VS Code (recommended)
+
+1. Open the project folder in VS Code (make sure the **Python** and **Jupyter** extensions are installed).
+2. Open `Subject.ipynb`.
+3. Click **Select Kernel** at the top-right of the notebook, choose **Python Environments**, and pick the interpreter located at `./.venv` (at the root of the project).
+4. Run the cells. Because the kernel points to `./.venv`, all the dependencies installed with `uv add` are available — no extra installation needed.
+
+### Option B — Jupyter in the browser
+
+Launch the Jupyter web app directly from the uv environment:
 
 ```bash
 uv run jupyter notebook
 ```
 
-The Jupyter web app should be launched. But if you have any problems, you could use [Google Colab](https://colab.research.google.com/?utm_source=scs-index).
+`uv run` executes Jupyter inside the project's `.venv`, so the `Python 3 (.venv)` kernel is selected automatically and all dependencies are available. Then open `Subject.ipynb` from the web interface.
+
+### Option C — Google Colab
+
+If you have any problems with your local setup, you can use [Google Colab](https://colab.research.google.com/?utm_source=scs-index): upload `Subject.ipynb`, and Colab will provide a ready-to-use Python environment (you may need to install missing packages with `!pip install ...` directly in a cell, since uv is not used there).
 
 
 ---------------------
 ## Submitting your work
 
-Fill the notebook ```Subject.ipynb```
+Fill the notebook ```Subject.ipynb```, making sure to include your explanations and notes (in the markdown cells) alongside your code — they are as important as the code itself.
 
-Before submitting your notebook back to us, verify that we will be able to run it without errors if we do it from the first cell to the last one.
+You can submit your work in one of two ways:
+
+- **Send us the `Subject.ipynb` file directly**, with all your explanations and notes included.
+- **Or create a Git repository** (e.g. on GitHub) containing your notebook and send us the link.
+
+Before submitting, verify that we will be able to run the notebook without errors if we do it from the first cell to the last one.
 
 
 -----

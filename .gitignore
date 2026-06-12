@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+
+# uv / virtual environments
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Datasets downloaded by the notebook (FashionMNIST)
+data/
+../data/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
